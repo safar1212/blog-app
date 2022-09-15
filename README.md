@@ -1,24 +1,53 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blog-App
 
-Things you may want to cover:
+## Welcome! 👋
+                              
+## Built With ✔️
 
-* Ruby version
+- Ruby on Rails programming language
 
-* System dependencies
+## Functionalites 😄
 
-* Configuration
+- This is going to be a crud app
 
-* Database creation
+## Getting Started 🙌
 
-* Database initialization
+To get a local copy up and running follow these simple example steps.
 
-* How to run the test suite
+### Prerequisites
+```
+  Rails
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+### Setup
+Clone the repository and change the directory to portfolio
 
-* Deployment instructions
+``` 
+  `$ git clone 'https://github.com/safar1212/blog-app'`
 
-* ...
+  `$ cd blog-app`
+
+  `$ http://localhost/3000`
+
+```
+
+
+### Authors
+
+| 👤 Name | Github | Twitter | LinkedIn |
+|------|--------|---------|----------|
+|Safar Ali|[@Safar Ali](https://github.com/safar1212)|[@Safar Ali](https://twitter.com/SafarAli999)|[@Safar Ali](https://www.linkedin.com/in/safar-ali999/)|
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is owned by Safar Ali.
+
