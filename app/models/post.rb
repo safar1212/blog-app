@@ -12,4 +12,8 @@ class Post < ActiveRecord::Base
   def recent_comment
     comments.order(created_at: :desc).limit(5)
   end
+
+  validates :Title, :presence, true, length: {maximum: 250}
+  validates :CommentsCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :LikesCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 end

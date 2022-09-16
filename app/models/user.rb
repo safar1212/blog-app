@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
   def recent_post
     posts.order(create_at: :desc).limit(3)
   end
+
+  validates :Name, :presence, true
+  validates :PostsCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 end
