@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :likes, class_name: 'Like', foreign_key: 'AuthorId'
 
   def recent_post
-    posts.order(create_at: :desc).limit(3)
+    posts.order(created_at: :desc).limit(3)
   end
 
   validates :Name, :presence, true
