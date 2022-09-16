@@ -17,6 +17,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 ```
+  Ruby
   Rails
 
 ```
@@ -27,6 +28,12 @@ Clone the repository and change the directory to portfolio
   `$ git clone 'https://github.com/safar1212/blog-app'`
 
   `$ cd blog-app`
+
+  `$ bundle install`
+
+  `$ Rails.create()`
+
+  `$ Ruby bin/rails db:migrate`
 
   `$ http://localhost/3000`
 
