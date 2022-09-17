@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
     expect(author).to_not be_valid
   end
 
-#   it 'has last_three_posts with 3 posts' do
-#     expect(author.last_three_posts.count).to_not eq(3)
-#   end
+  it 'has last_three_posts with 3 posts' do
+    expect(author.last_three_posts.count).to_not eq(3)
+  end
 end

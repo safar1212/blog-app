@@ -1,12 +1,13 @@
-class User < ActiveRecord::Base
-  has_many :posts, class_name: 'Post', foreign_key: 'AuthorId'
-  has_many :comments, class_name: 'Comment', foreign_key: 'AuthorId'
-  has_many :likes, class_name: 'Like', foreign_key: 'AuthorId'
+class User <  ActiveRecord::Base
+  validates :Name, presence: true
+  validates :PostsCounter, numericality: { greater_than_or_equal_to: 0 }
 
-  def recent_post
-    posts.order(created_at: :desc).limit(3)
+  def last_three_posts
+    posts.last(3)
   end
 
-  validates :Name, :presence, true
-  validates :PostsCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  has_many :likes, foreign_key: 'user_id'
+  has_many :posts, foreign_key: 'user_id'
+  has_many :comments, foreign_key: 'user_id'
+
 end
