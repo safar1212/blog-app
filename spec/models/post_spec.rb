@@ -16,7 +16,7 @@ RSpec.describe Post, type: :model do
 
   it 'is not valid without a title' do
     poster.Title = nil
-   end
+  end
 
   it 'is not valid without a comments_counter' do
     poster.CommentsCounter = nil
@@ -42,5 +42,4 @@ RSpec.describe Post, type: :model do
     poster.Text = nil
     expect(poster).to_not be_valid
   end
-  
 end
