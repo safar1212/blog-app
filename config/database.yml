@@ -6,15 +6,15 @@
 #
 default: &default
   adapter: postgresql
+  encoding: unicode
+  
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  
 
 development:
   <<: *default
-  database: MyDatabase
-  encoding: unicode
-  host: localhost
-  pool: 5
+  database: mydatabase
+  
   username: postgres
   password: admin
 
@@ -23,11 +23,13 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: MyDatabase_test
+  database: mydatabase_test
+  username: postgres
+  password: admin
 
 production:
   <<: *default
-  database: MyDatabse
+  database: mydatabse
   username: postgres
   host: localhost
   password: <%= ENV["MYDATABASE_PASSWORD"] %>
