@@ -1,13 +1,22 @@
 <div class="post-show-c">
-    <div class="user-recent-post">
-        <div class="post-inf-box"
-            <h2 class="user-post-title">Post : <%= @post.Title %> by <%= @posts.user.Name %></h2>
-            <h3>Comments: <%= @post.CommentsCounter%>, Likes: <%= @post.LikesCounter %><h3>
-        </div>
-        <p class="user-post-text"><%= @post.Text %></p>
+<p><%= @post.Title %> by <%= @post.user.Name%></p>
+<p>Comments: <span><%= @post.comments.count %></span>, Likes: <span><%= @post.likes.count %></span></p>
 
-        <% @comments.each do |comment|%>
-            <h3><%= comment.user.Name %><%= comment.Text %></h3>
-        <% end %>
-    </div>
+<%= @post.text %>
+    <%= form_with model: Like, url: post_likes_path(@post.user, @post), method: :post do |form| %>
+    <% form.submit "Like" %>
+<% end %>
+
+<% if @post.comments.length > 0 %>
+    <% @post.comments.each do |comment| %>
+    <p><%= comment.user.Name %> : <%= comment.Text %></p>
+<% end %>
+    <% else %>
+    <p>There are no comments !!</p>
+<% end %>
+<div>
+    <h3>Add a comment</h3>
+    <%= render partial: 'partials/_new' %>
 </div>
+</div>
+
