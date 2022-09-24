@@ -7,12 +7,16 @@ class Post < ActiveRecord::Base
   has_many :comments, class_name: 'Comment', foreign_key: 'PostId'
   has_many :likes, class_name: 'Like', foreign_key: 'PostId'
 
-  def post_counter_updater
-    user.post_counter = user.posts.count
-    User.find(user.id).update(post_counter: user.posts.count)
-  end
+  after_save :update_user_posts_count
 
-  def last_five_comments
+  def five_recent_comments
     comments.last(5)
   end
+
+  private
+
+  def update_user_posts_count
+    user.increment!(:PostsCounter)
+  end
+
 end
