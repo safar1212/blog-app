@@ -18,5 +18,4 @@ class Post < ActiveRecord::Base
   def update_user_posts_count
     user.increment!(:PostsCounter)
   end
-
 end

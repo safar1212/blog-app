@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   validates :Name, presence: true
   validates :PostsCounter, numericality: { greater_than_or_equal_to: 0 }
-  
+
   def three_recent_posts
     posts.limit(3).order(created_at: :desc)
   end
