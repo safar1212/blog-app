@@ -1,10 +1,39 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.joins(:user).where(user: { id: params[:user_id] })
+    @user = User.find(params[:user_id])
+    @posts = @user.posts
   end
 
   def show
-    @post = Post.joins(:user).where(user: { id: params[:user_id] }).find(params[:id])
+    @post = Post.find(params[:id])
+    @user = @post.user
     @comments = @post.comments
+  end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @user = current_user
+    post = Post.new(params.require(:post).permit(:Text, :Title))
+    post.user_id = @user.id
+    respond_to do |format|
+      format.html do
+        if post.save
+          flash[:success] = 'Post saved successfully'
+          redirect_to user_posts_path(@user)
+        else
+          flash.now[:error] = 'Error: Post could not be saved'
+          render :new, locals: { post: }
+        end
+      end
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:Title, :Text)
   end
 end

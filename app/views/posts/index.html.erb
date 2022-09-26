@@ -1,28 +1,40 @@
 <div class="posts-container">
 
     <div class="user-box">
-        <img class="user-img" src=<%= @posts.user.Photo %> alt="user"/>
+        <img class="user-img" src=<%= @user.Photo %> alt="user"/>
         <div class="user-info-box">
-            <h2 class="user-name"><%= @posts.user.Name %></h2>
-            <p class="user-post-count">Number of posts: <%= @posts.user.PostsCounter%></p>
+            <h2 class="user-name"><%= @user.Name %></h2>
+            <p class="user-post-count">Number of posts: <%= @user.PostsCounter%></p>
         </div>
     </div>
 
     <% @posts.each do |post| %>
-        <div class="user-recent-post">
-            <h2 class="user-post-title">Post : <%= post.id %></h2>
-            <p class="user-post-text"><%= post.Text %></p>
-            <h3>Comments: <%= post.CommentsCounter%>, Likes: <%= post.LikesCounter %><h3>
-
-            <% post.last_five_comments.each do |comment|%>
-                <h3><%= comment.user.Name %><%= comment.Text %></h3>
+        <div>
+            <%= link_to user_post_path(@user, post), class:"text-dec" do %> 
+                
+                <div class="posts-info">
+                    <h2 class="user-post-title">Post : <%= post.Title %></h2>
+                    <p class="user-post-text"><%= post.Text %></p>
+                    <h3 class="user-post-counters">Comments: <%= post.CommentsCounter%>, Likes: <%= post.LikesCounter %><h3>
+                </div>
             <% end %>
 
+            <div class="post-comments">
+                <% post.five_recent_comments.each do |comment|%>
+                    <h3><%= comment.user.Name %><%= comment.Text %></h3>
+                <% end %>
+            </div>
         </div>
     <% end%>
+
 
     <button class="button">
         Pagination
     </button>
 
+    <%= link_to new_user_post_path(@user) do %>
+        <button>Create a new post</button>
+      <% end %>
+  
+  
 </div>
