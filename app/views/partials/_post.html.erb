@@ -1,4 +1,6 @@
-
-<h3><%= post.Title%> </h3>
-<%= post.Text %>
-<p >Comments: <span><%= post.comments.count %></span>, Likes: <span><%= post.likes.count %></span></p>
+<% @all_posts.each do |post| %>
+    <li>
+      <%= render 'posts/post_tile', post: post, user: @user %>
+      <%= render 'posts/comments_tile', comments: post.comments %>
+    </li>
+<% end %>

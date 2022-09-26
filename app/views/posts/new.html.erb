@@ -1,9 +1,10 @@
-<div class="create-post-c">
-    <h2>Create a post</h2>
 
-    <%= form_with model: @post, url: user_posts_path, scope: :post, html: {class: "post-form-c"} do |form| %>  
-        <%= form.text_field :Title, placeholder: "Title", required: true, class: "post-title-c" %>
-        <%= form.text_area :Text, placeholder: "Type here...", rows: 20, required: true,  class: "post-text-c" %>
-    <%= form.submit "Post", class: "submit-btn" %>
-    <% end %> 
+
+<div id="add-new-page" class="content">
+  <h1>Create a New Post</h1>
+  <%= form_with model: @post, url: user_posts_path, method: :post, local: true do |form| %>
+    <%= form.text_field :Title, placeholder: 'Enter Title here ...' %>
+    <%= form.text_area :Text, rows: 10, placeholder: "What's on your mind ..." %>
+    <%= form.submit "Submit" %>
+  <% end %>
 </div>
