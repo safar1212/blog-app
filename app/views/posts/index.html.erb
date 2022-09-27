@@ -8,6 +8,10 @@
         </div>
     </div>
 
+    <%= link_to new_user_post_path(@user) do %>
+        <button>Create a new post</button>
+    <% end %>
+
     <% @posts.each do |post| %>
         <div>
             <%= link_to user_post_path(@user, post), class:"text-dec" do %> 
@@ -31,10 +35,6 @@
     <button class="button">
         Pagination
     </button>
-
-    <%= link_to new_user_post_path(@user) do %>
-        <button>Create a new post</button>
-      <% end %>
   
   
 </div>
