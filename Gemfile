@@ -6,6 +6,7 @@ gem 'bootstrap', '~> 5.1.3'
 gem 'ffi'
 gem 'rails', '~> 7.0.4'
 gem 'rails-controller-testing'
+gem 'devise'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 # Use postgresql as the database for Active Record
