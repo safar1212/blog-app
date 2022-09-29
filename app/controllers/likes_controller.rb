@@ -20,7 +20,7 @@ class LikesController < ApplicationController
     @user = current_user
     @post = Post.find(params[:post_id] || params[:id])
     like = Like.new
-    like.PostId = @post.id
+    like.post_id = @post.id
     like.user_id = @user.id
 
     if like.save
