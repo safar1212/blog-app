@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-       
 
   has_many :likes, foreign_key: 'user_id'
   has_many :posts, foreign_key: 'user_id'
@@ -25,6 +24,4 @@ class User < ActiveRecord::Base
     self.posts_counter = 0
     self.photo = 'https://img.myloview.com/posters/social-media-user-icon-default-avatar-profile-image-400-251200036.jpg'
   end
-
- 
 end
