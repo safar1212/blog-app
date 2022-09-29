@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   private
 
   def default_values
-    self.posts_counter = 0
-    self.photo = 'https://img.myloview.com/posters/social-media-user-icon-default-avatar-profile-image-400-251200036.jpg'
+    self.PostsCounter = 0
+    self.Photo = 'https://img.myloview.com/posters/social-media-user-icon-default-avatar-profile-image-400-251200036.jpg'
   end
 end
