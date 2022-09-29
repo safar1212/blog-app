@@ -10,12 +10,12 @@ RSpec.describe 'Post', type: :feature do
                               LikesCounter: 0)
       @post_two = Post.create(Title: 'three post', Text: 'third post', user_id: @user.id, CommentsCounter: 0,
                               LikesCounter: 0)
-      Comment.create(Text: 'welcome to the city', user_id: @user.id, PostId: @post_one.id)
-      Comment.create(Text: 'This movie is good', user_id: @user.id, PostId: @post_one.id)
-      Comment.create(Text: 'I love Pakistan', user_id: @user.id, PostId: @post_two.id)
-      Like.create(PostId: @post.id, user_id: @user.id)
-      Like.create(PostId: @post_one.id, user_id: @user.id)
-      Like.create(PostId: @post_two.id, user_id: @user.id)
+      Comment.create(Text: 'welcome to the city', user_id: @user.id, post_id: @post_one.id)
+      Comment.create(Text: 'This movie is good', user_id: @user.id, post_id: @post_one.id)
+      Comment.create(Text: 'I love Pakistan', user_id: @user.id, post_id: @post_two.id)
+      Like.create(post_id: @post.id, user_id: @user.id)
+      Like.create(post_id: @post_one.id, user_id: @user.id)
+      Like.create(post_id: @post_two.id, user_id: @user.id)
     end
     it "I can see the user's username." do
       visit user_posts_path(@user.id)

@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     comment = Comment.new(params.require(:comment).permit(:Text))
     comment.user_id = @user.id
-    comment.PostId = @post.id
+    comment.post_id = @post.id
     respond_to do |format|
       format.html do
         if comment.save
