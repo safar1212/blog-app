@@ -1,12 +1,21 @@
 class User < ActiveRecord::Base
-  validates :Name, presence: true
-  validates :PostsCounter, numericality: { greater_than_or_equal_to: 0 }
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+       
+
+  has_many :likes, foreign_key: 'user_id'
+  has_many :posts, foreign_key: 'user_id'
+  has_many :comments, foreign_key: 'user_id'
 
   def three_recent_posts
     posts.limit(3).order(created_at: :desc)
   end
 
-  has_many :likes, foreign_key: 'user_id'
-  has_many :posts, foreign_key: 'user_id'
-  has_many :comments, foreign_key: 'user_id'
+  validates :Name, presence: true
+  validates :PostsCounter, numericality: { greater_than_or_equal_to: 0 }
+
+ 
 end
