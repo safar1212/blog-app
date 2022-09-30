@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 
   def default_values
     self.PostsCounter = 0
-    self.Bio = "I am a teacher"
+    self.Bio = 'I am a teacher'
     self.Photo = 'https://img.myloview.com/posters/social-media-user-icon-default-avatar-profile-image-400-251200036.jpg'
   end
 end
