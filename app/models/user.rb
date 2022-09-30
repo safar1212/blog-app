@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :confirmable
 
   has_many :likes, foreign_key: 'user_id'
   has_many :posts, foreign_key: 'user_id'
@@ -22,6 +23,7 @@ class User < ActiveRecord::Base
 
   def default_values
     self.PostsCounter = 0
+    self.Bio = "I am a teacher"
     self.Photo = 'https://img.myloview.com/posters/social-media-user-icon-default-avatar-profile-image-400-251200036.jpg'
   end
 end
