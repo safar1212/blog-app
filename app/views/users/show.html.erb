@@ -20,11 +20,7 @@
         <% end %>
     <% end%>
 
-    <% if can? :destroy, @post %>
-          <%= form_with url: user_post_path(@user.id, post.id), :method => :delete do |f| %>
-            <%= f.submit 'Delete post', class: 'btn-danger btn-sm mx-2' %>
-          <% end %>
-        <% end %>
+    <%= render partial: "posts/delete_post", local: { post: @post } %>
 
     <button class="button">
         <%= link_to "See all posts", user_posts_path(@user.id), class:"text-dec" %>
