@@ -1,4 +1,9 @@
 
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+
+
+
 # Blog-App
 
 ## Welcome! 👋
@@ -37,6 +42,19 @@ Clone the repository and change the directory to portfolio
 
   `$ http://localhost/3000`
 
+```
+
+### Run tests
+you can run one of the following command in your terminal
+1. Run testing
+```Ruby
+rspec spec
+```
+2. Run linters
+```Ruby
+> npx stylelint "**/*.{css,scss}"
+> Rubocop --color
+> Rubocop -A
 ```
 
 
