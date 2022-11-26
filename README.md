@@ -74,5 +74,5 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is owned by Safar Ali.
+This project has been created by Safar Ali.
 
