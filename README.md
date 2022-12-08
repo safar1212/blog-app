@@ -6,7 +6,6 @@
 
 # Blog-App
 
-## Welcome! 👋
                               
 ## Built With ✔️
 
