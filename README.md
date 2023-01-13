@@ -11,7 +11,7 @@
 
 ## Functionalites 😄
 
-- This is a crud app
+- This is a CRUD app
 
 ## Getting Started 🙌
 
